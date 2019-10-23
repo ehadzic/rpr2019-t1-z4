@@ -36,10 +36,30 @@ public class Korpa {
 
     }
 
+    public Artikl izbaciArtikl(String kod) {
+        Artikl artikl = new Artikl();
+        if (0 == artikli.length) System.out.println("Nema dostupnih artikala!");
+        for (int i = 0; i < brojArtikala; i++) {
+            if (artikli[i].getKod().equals(kod)) {
+                artikl = artikli[i];
+                for (int j = 0; j < brojArtikala - 1; j++) {
+                    artikli[j] = artikli[j + 1];
+                }
+                brojArtikala--;
+                artikli[brojArtikala] = null;
+                break;
+            }
+        }
+        return artikl;
+    }
 
-
-
-
+    public int dajUkupnuCijenuArtikala(){
+        int suma = 0;
+        for(int i = 0; i < brojArtikala; i++){
+            suma+=artikli[i].getCijena();
+        }
+        return suma;
+    }
 
 
 }
