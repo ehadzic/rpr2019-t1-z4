@@ -4,6 +4,19 @@ public class Artikl {
     private String naziv, kod;
     private int cijena;
 
+    public Artikl(String ime, int i, String s) {
+        naziv = ime;
+        cijena = i;
+        kod = s;
+    }
+
+    public Artikl() {
+        naziv="";
+        cijena = 0;
+        kod="";
+
+    }
+
     public String getNaziv() {
         return naziv;
     }

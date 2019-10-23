@@ -27,7 +27,7 @@ public class Korpa {
 
     public boolean dodajArtikl(Artikl artikl){
 
-        if(artikli.length < maxBrojArtikala){
+        if(brojArtikala < maxBrojArtikala){
             artikli[brojArtikala] = artikl;
             brojArtikala++;
             return true;
@@ -36,14 +36,14 @@ public class Korpa {
 
     }
 
-    public Artikl izbaciArtikl(String kod) {
+    public Artikl izbaciArtiklSaKodom(String kod){
         Artikl artikl = new Artikl();
-        if (0 == artikli.length) System.out.println("Nema dostupnih artikala!");
-        for (int i = 0; i < brojArtikala; i++) {
-            if (artikli[i].getKod().equals(kod)) {
+        if(0 == artikli.length) System.out.println("Nema dostupnih artikala!");
+        for(int i = 0; i < brojArtikala; i++){
+            if (artikli[i].getKod().equals(kod)){
                 artikl = artikli[i];
-                for (int j = 0; j < brojArtikala - 1; j++) {
-                    artikli[j] = artikli[j + 1];
+                for(int j = i; j < brojArtikala - 1; j++){
+                    artikli[j] = artikli[j+1];
                 }
                 brojArtikala--;
                 artikli[brojArtikala] = null;
@@ -51,6 +51,7 @@ public class Korpa {
             }
         }
         return artikl;
+
     }
 
     public int dajUkupnuCijenuArtikala(){
