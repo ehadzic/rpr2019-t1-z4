@@ -5,6 +5,14 @@ public class Supermarket {
     private Artikl[] artikli = new Artikl[maxBrojArtikala];
     private int brojArtikala = 0;
 
+    public Supermarket() {
+    }
+
+    public Supermarket(Artikl[] artikli, int brojArtikala) {
+        this.artikli = artikli;
+        this.brojArtikala = brojArtikala;
+    }
+
     public int getMaxBrojArtikala() {
         return maxBrojArtikala;
     }

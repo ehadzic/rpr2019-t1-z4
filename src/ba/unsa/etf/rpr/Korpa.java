@@ -5,6 +5,9 @@ public class Korpa {
     private Artikl[] artikli = new Artikl[maxBrojArtikala];
     private int brojArtikala = 0;
 
+    public Korpa() {
+    }
+
     public int getMaxBrojArtikala() {
         return maxBrojArtikala;
     }
